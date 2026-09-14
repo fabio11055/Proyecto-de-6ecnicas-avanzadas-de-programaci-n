@@ -2,48 +2,21 @@
   <v-container fluid class="landing-container d-flex align-center justify-center fill-height pa-4 text-center">
     <div class="content-wrapper d-flex flex-column align-center w-100">
       
-      <!-- Logo modular sin tarjeta blanca -->
+      <!-- Logo modular en modo simple -->
       <LogoCard simple />
 
       <!-- Formulario para Estudiante -->
-      <StudentStudentForm v-if="role === 'estudiante'" />
+      <StudentFormularioestudiantes v-if="role === 'estudiante'" />
 
-      <!-- Formulario/Vista para Docente -->
-      <div v-else-if="role === 'docente'" class="w-100 max-width-form">
-        <v-card class="pa-6 rounded-xl elevation-4 bg-white">
-          <v-card-title class="text-h5 font-weight-bold text-green-darken-4 mb-2">
-            Ingreso de Docentes
-          </v-card-title>
-          <v-card-text>
-            <v-text-field
-              label="Correo institucional"
-              variant="solo"
-              rounded="pill"
-              class="mb-3"
-              hide-details
-            ></v-text-field>
-            <v-text-field
-              label="Contraseña"
-              type="password"
-              variant="solo"
-              rounded="pill"
-              class="mb-4"
-              hide-details
-            ></v-text-field>
-            <v-btn
-              block
-              color="#2D6A4F"
-              size="large"
-              rounded="pill"
-              class="text-white font-weight-bold"
-            >
-              Iniciar Sesión
-            </v-btn>
-          </v-card-text>
-        </v-card>
+      <!-- Formulario modular para Docente -->
+      <TeacherFormulariodocente v-else-if="role === 'docente'" />
+
+      <!-- Mensaje de respaldo por si el rol no coincide exactamente -->
+      <div v-else class="text-white">
+        <p>Cargando formulario...</p>
       </div>
 
-      <!-- Botón de regreso si no hay un rol definido o para cambiar de rol -->
+      <!-- Botón para regresar al inicio -->
       <v-btn
         to="/"
         variant="text"
@@ -63,8 +36,12 @@ import { useRoute } from 'vue-router'
 import { computed } from 'vue'
 
 const route = useRoute()
-// Lee la propiedad ?role= de la URL
-const role = computed(() => route.query.role || 'estudiante')
+
+// Computed reactivo que limpia espacios y convierte a minúsculas
+const role = computed(() => {
+  const queryRole = route.query.role
+  return queryRole ? String(queryRole).trim().toLowerCase() : ''
+})
 </script>
 
 <style scoped>
@@ -76,9 +53,5 @@ const role = computed(() => route.query.role || 'estudiante')
 
 .content-wrapper {
   max-width: 500px;
-}
-
-.max-width-form {
-  max-width: 480px;
 }
 </style>
