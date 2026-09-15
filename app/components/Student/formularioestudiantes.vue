@@ -45,8 +45,11 @@
       ¿EN QUÉ GRADO ESTÁS?
     </label>
     
-    <!-- Componente de Selección de Grado -->
-    <StudentGradeSelector class="mb-6" />
+    <!-- Componente de Selección de Grado conectado -->
+    <StudentGradeSelector 
+      v-model="form.grade" 
+      class="mb-6" 
+    />
 
     <!-- Botón de Continuar -->
     <v-btn
@@ -66,15 +69,27 @@
 
 <script setup>
 import { reactive } from 'vue'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
 
 const form = reactive({
   name: '',
   school: '',
-  code: ''
+  code: '',
+  grade: '4' // Valor inicial por defecto
 })
 
 const handleSubmit = () => {
-  console.log('Datos estudiante:', form)
+  // Redirige pasando nombre, institución y grado
+  router.push({
+    path: '/paginaestudiante',
+    query: {
+      nombre: form.name || 'Estudiante',
+      escuela: form.school || 'Institución Educativa',
+      grado: form.grade || '4'
+    }
+  })
 }
 </script>
 
@@ -88,21 +103,18 @@ const handleSubmit = () => {
   letter-spacing: 1px;
 }
 
-/* Aplica fondo blanco a la tarjeta del input */
 :deep(.custom-input .v-field) {
   background-color: #ffffff !important;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08) !important;
 }
 
-/* Asegura que el texto que escribe el usuario sea visible y oscuro */
 :deep(.custom-input input) {
-  color: #1c2518 !important; /* Color oscuro visible */
+  color: #1c2518 !important;
   text-align: center;
   font-size: 0.95rem;
   font-weight: 600;
 }
 
-/* Cambia el color del texto del placeholder cuando está vacío */
 :deep(.custom-input input::placeholder) {
   color: #888888 !important;
   opacity: 1;
