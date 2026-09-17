@@ -6,10 +6,10 @@
       <LogoCard simple />
 
       <!-- Formulario para Estudiante -->
-      <StudentFormularioestudiantes v-if="role === 'estudiante'" />
+      <StudentForm v-if="role === 'estudiante'" />
 
       <!-- Formulario modular para Docente -->
-      <TeacherFormulariodocente v-else-if="role === 'docente'" />
+      <TeacherForm v-else-if="role === 'docente'" />
 
       <!-- Mensaje de respaldo por si el rol no coincide exactamente -->
       <div v-else class="text-white">

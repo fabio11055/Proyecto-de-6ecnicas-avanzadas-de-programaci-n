@@ -46,7 +46,7 @@
     </label>
     
     <!-- Componente de Selección de Grado conectado -->
-    <StudentGradeSelector 
+    <GradeSelector 
       v-model="form.grade" 
       class="mb-6" 
     />

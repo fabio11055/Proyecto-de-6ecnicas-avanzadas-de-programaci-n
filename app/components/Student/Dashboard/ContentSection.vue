@@ -5,12 +5,12 @@
       <h2 class="text-h6 font-weight-black text-white mb-2">
         Conceptos Clave<br />de Sostenibilidad
       </h2>
-      <StudentDashboardConceptCards />
+      <ConceptCards />
     </v-col>
 
     <!-- Columna Derecha: Banner Principal -->
     <v-col cols="12" lg="8">
-      <StudentDashboardCartamobible />
+      <MobileCard />
     </v-col>
   </v-row>
 </template>

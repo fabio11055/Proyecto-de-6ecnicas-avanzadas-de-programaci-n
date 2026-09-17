@@ -4,7 +4,7 @@
       
       <!-- Panel Lateral -->
       <v-col cols="12" md="3" lg="2.5" class="pr-md-4 mb-4 mb-md-0">
-        <StudentDashboardBarralateral 
+        <StudentSidebar 
           :active-tab="currentTab" 
           @change-tab="currentTab = $event" 
         />
@@ -14,25 +14,25 @@
       <v-col cols="12" md="9" lg="9.5" class="d-flex flex-column">
         
         <!-- Barra Superior Conectada -->
-        <StudentDashboardBarradenavegacion 
+        <StudentNavbar 
           :active-tab="currentTab" 
           @change-tab="currentTab = $event" 
         />
 
         <!-- Vistas de Componentes -->
-        <StudentDashboardSeccionContenidos 
+        <ContentSection 
           v-if="currentTab === 'inicio' || currentTab === 'contenidos'" 
         />
 
-        <StudentDashboardSeccionRecursos 
+        <ResourcesSection 
           v-else-if="currentTab === 'recursos'" 
         />
 
-        <StudentDashboardSeccionActividades 
+        <ActivitiesSection 
           v-else-if="currentTab === 'actividades'" 
         />
 
-        <StudentDashboardSeccionEvaluacion 
+        <EvaluationSection 
           v-else-if="currentTab === 'evaluacion'" 
         />
 

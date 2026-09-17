@@ -43,17 +43,17 @@
 
         <!-- Slide 1: Componente REDUCIR -->
         <v-carousel-item class="fill-height">
-          <StudentDashboardCardReducir />
+          <CardReducir />
         </v-carousel-item>
 
         <!-- Slide 2: Componente REUTILIZAR -->
         <v-carousel-item class="fill-height">
-          <StudentDashboardCardReutilizar />
+          <CardReutilizar />
         </v-carousel-item>
 
         <!-- Slide 3: Componente RECICLAR -->
         <v-carousel-item class="fill-height">
-          <StudentDashboardCardReciclar />
+          <CardReciclar />
         </v-carousel-item>
 
       </v-carousel>
