@@ -1,50 +1,69 @@
+<script setup>
+import { ref, onMounted } from 'vue'
+import { useRoute } from 'vue-router'
+import { useAuthStore } from '~/stores/auth'
+
+// Instancia del store de autenticación (maneja roles, login y sesión)
+const authStore = useAuthStore()
+const route = useRoute()
+
+
+// Controla el rol seleccionado: 'estudiante' por defecto, o lee ?role=docente de la URL
+const selectedRole = ref('estudiante')
+
+
+// Al cargar la vista, recupera la sesión previa y sincroniza el rol desde la URL
+onMounted(() => {
+  // Inicializa los datos del usuario si ya existía una sesión guardada
+  authStore.initUser()
+
+  // Si en la URL viene el parámetro ?role=docente o ?role=estudiante, lo asigna
+  const queryRole = String(route.query.role || '').toLowerCase()
+  if (queryRole === 'docente' || queryRole === 'estudiante') {
+    selectedRole.value = queryRole
+  }
+})
+</script>
+
 <template>
-  <v-container fluid class="landing-container d-flex align-center justify-center fill-height text-center pa-4">
-    <div class="content-wrapper d-flex flex-column align-center">
+  <!-- CONTENEDOR PRINCIPAL: Centrado en pantalla con fondo temático -->
+  <v-container fluid class="login-page-container d-flex align-center justify-center fill-height pa-4 text-center">
+    <div class="page-content-wrapper d-flex flex-column align-center w-100">
       
-      <!-- Componente del Logo + Insignia -->
-      <LogoCard />
+      <!-- 1. Cabecera con Logo, Título y Descripción del Sistema -->
+      <LoginHeader />
 
-      <!-- Título Principal -->
-      <h1 class="main-title text-h2 font-weight-black mb-4">
-        Clasificación de<br />residuos
-      </h1>
+      <!-- 2. Alertas globales de feedback en caso de éxito o error -->
+      <v-alert
+        v-if="authStore.error"
+        type="error"
+        variant="tonal"
+        closable
+        density="compact"
+        class="mb-3 w-100 text-left"
+        @click:close="authStore.error = null"
+      >
+        ⚠️ {{ authStore.error }}
+      </v-alert>
 
-      <!-- Subtítulo -->
-      <p class="subtitle-text text-body-1 mb-8">
-        Descubre cómo clasificar correctamente los residuos y su importancia<br />
-        para el medio ambiente mediante un proceso interactivo.
-      </p>
+      <!-- 3. Selector de Rol Interactivo (Estudiante o Docente) -->
+      <RoleSelector v-model="selectedRole" />
 
-      <!-- Botones de Acción independientes -->
-      <div class="d-flex flex-wrap justify-center ga-4">
-        <TeacherBtn />
-        <StudentBtn />
-      </div>
+      <!-- 4. Formulario dinámico según el rol (Inicio de sesión o registro) -->
+      <LoginForm :role="selectedRole" />
 
     </div>
   </v-container>
 </template>
 
-<script setup>
-</script>
-
 <style scoped>
-.landing-container {
+.login-page-container {
   min-height: 100vh;
   background: url('/fondo.jpg') center center / cover no-repeat;
   position: relative;
 }
 
-.main-title {
-  color: #1B4332;
-  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
-  line-height: 1.1;
-}
-
-.subtitle-text {
-  color: #1B4332;
-  font-weight: 600;
-  max-width: 600px;
+.page-content-wrapper {
+  max-width: 520px;
 }
 </style>
