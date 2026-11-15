@@ -1,0 +1,222 @@
+{
+  "estudiantes": [
+    {
+      "id": "LyX7Wb57HzE",
+      "nombre": "Sarela",
+      "escuela": "La Salle",
+      "grado": "4",
+      "codigo": "1211",
+      "docenteId": "NynA_Y1ugUo",
+      "docenteNombre": "Fabio Cantero"
+    },
+    {
+      "id": "X5mbl3Putr8",
+      "nombre": "Daniela",
+      "escuela": "Rancho Grande",
+      "grado": "4",
+      "codigo": "1211",
+      "docenteId": "NynA_Y1ugUo",
+      "docenteNombre": "Fabio Cantero"
+    }
+  ],
+  "docentes": [
+    {
+      "id": "NynA_Y1ugUo",
+      "nombre": "Fabio Cantero",
+      "email": "fabio@gmail.com",
+      "password": "Fabio123",
+      "institucion": "El Dorado",
+      "codigo": "1211"
+    }
+  ],
+  "notas": [
+    {
+      "id": "Rf3WoyRQ3nQ",
+      "estudianteId": "est-1794431241637",
+      "nombre": "Daniela",
+      "escuela": "Rancho Grande",
+      "grado": "4",
+      "actividad": "Evaluación 3R - 4° Grado",
+      "puntaje": 3.5,
+      "calificacionMaxima": 5,
+      "fecha": "2026-11-11",
+      "observacion": "Aciertos: 5 de 8. Calificación: 3.5 / 5.0",
+      "docenteId": "NynA_Y1ugUo",
+      "docenteCodigo": "1211"
+    }
+  ],
+  "contenido": {
+    "conceptos": [
+      {
+        "id": "reducir",
+        "titulo": "Reducir",
+        "descripcion": "Disminuir el consumo y la cantidad de residuos que generamos en nuestro día a día.",
+        "imagen": "/reducir.jpg",
+        "puntosClave": [
+          {
+            "titulo": "Ahorro de Agua",
+            "desc": "Cierra el grifo mientras te cepillas o te enjabonas las manos.",
+            "icon": "mdi-water-off",
+            "img": "/agua.jpg"
+          },
+          {
+            "titulo": "Eficiencia Energética",
+            "desc": "Apaga las luces y desconecta aparatos cuando no los uses.",
+            "icon": "mdi-flash-off",
+            "img": "/energia.jpg"
+          },
+          {
+            "titulo": "Menos Plásticos",
+            "desc": "Evita empaques desechables y prefiere bolsas reutilizables.",
+            "icon": "mdi-package-variant-closed-remove",
+            "img": "/plasticos.jpg"
+          }
+        ]
+      },
+      {
+        "id": "reutilizar",
+        "titulo": "Reutilizar",
+        "descripcion": "Dar una segunda vida a los objetos antes de desecharlos, transformando lo viejo en nuevo.",
+        "imagen": "/reutilizar.png",
+        "puntosClave": [
+          {
+            "titulo": "Envases de Vidrio",
+            "desc": "Úsalos como especieros, lapiceros o macetas para plantas.",
+            "icon": "mdi-glass-jar",
+            "img": "/vidrio.jpg"
+          },
+          {
+            "titulo": "Ropa Vieja",
+            "desc": "Conviértela en bolsas de tela para compras o trapos de limpieza.",
+            "icon": "mdi-tshirt-crew",
+            "img": "/ropa.jpeg"
+          },
+          {
+            "titulo": "Botellas de Plástico",
+            "desc": "Transfórmalas en maceteros colgantes o comederos para aves.",
+            "icon": "mdi-bottle-soda-classic",
+            "img": "/botellas.jpg"
+          }
+        ]
+      },
+      {
+        "id": "reciclar",
+        "titulo": "Reciclar",
+        "descripcion": "Recolectar y transformar materiales usados en materia prima para crear nuevos productos.",
+        "imagen": "/reciclar.jpg",
+        "puntosClave": [
+          {
+            "titulo": "Caneca Blanca",
+            "desc": "Aprovechables: Plástico, cartón, papel, vidrio y metales limpios.",
+            "icon": "mdi-delete",
+            "img": "/caneca-blanca.jpg"
+          },
+          {
+            "titulo": "Caneca Verde",
+            "desc": "Orgánicos: Restos de comida y desechos agrícolas para compost.",
+            "icon": "mdi-delete",
+            "img": "/caneca-verde.jpg"
+          },
+          {
+            "titulo": "Caneca Negra",
+            "desc": "No aprovechables: Papel higiénico, servilletas usadas y cartón sucio.",
+            "icon": "mdi-delete",
+            "img": "/caneca-negra.jpg"
+          }
+        ]
+      }
+    ],
+    "videos": [
+      {
+        "id": "vid-1",
+        "categoria": "REDUCIR",
+        "titulo": "Aprende a Reducir en Casa",
+        "descripcion": "Consejos prácticos para consumir menos energía, agua y generar menos basura diaria.",
+        "url": "https://www.youtube.com/embed/cvakvfXj0KE"
+      },
+      {
+        "id": "vid-2",
+        "categoria": "REUTILIZAR",
+        "titulo": "Cómo Reutilizar Objetos Cotidianos",
+        "descripcion": "Descubre cómo dar nuevos usos a objetos que creías basura con proyectos DIY sencillos.",
+        "url": "https://www.youtube.com/embed/yM0SeWPybu8?si=Na1oiQt9mYJ6QblP"
+      },
+      {
+        "id": "vid-3",
+        "categoria": "RECICLAR",
+        "titulo": "Aprende a Reciclar Correctamente",
+        "descripcion": "Aprende los colores de los contenedores y cómo entregar los envases limpios y secos.",
+        "url": "https://www.youtube.com/embed/WVrxkF6TcQU?si=maVgU7PZvXpf_Ne1"
+      }
+    ],
+    "documentos": [
+      {
+        "id": "doc-1",
+        "titulo": "Guía Completa de las 3R para Niños",
+        "descripcion": "Manual educativo ilustrado sobre sostenibilidad y cuidado ambiental.",
+        "archivo": "/guia-3r-ninos.pdf"
+      },
+      {
+        "id": "doc-2",
+        "titulo": "Ficha de Actividades y Colorear",
+        "descripcion": "Ejercicios prácticos, sopas de letras y dibujos para colorear.",
+        "archivo": "/actividades-reciclaje.pdf"
+      }
+    ],
+    "actividades": [
+      {
+        "id": "act-clasificacion",
+        "titulo": "Desafío de Clasificación 3R",
+        "tipo": "clasificacion",
+        "descripcion": "Selecciona la caneca adecuada para cada uno de los residuos presentados.",
+        "preguntas": [
+          {
+            "id": "p1",
+            "item": "Botella plástica limpia y aplastada",
+            "opciones": [
+              "Caneca Blanca (Aprovechables)",
+              "Caneca Verde (Orgánicos)",
+              "Caneca Negra (No aprovechables)"
+            ],
+            "correcta": 0,
+            "explicacion": "El plástico limpio y seco va en la caneca blanca."
+          },
+          {
+            "id": "p2",
+            "item": "Cáscara de plátano y restos de fruta",
+            "opciones": [
+              "Caneca Blanca (Aprovechables)",
+              "Caneca Verde (Orgánicos)",
+              "Caneca Negra (No aprovechables)"
+            ],
+            "correcta": 1,
+            "explicacion": "Los restos orgánicos biodegradables van en la caneca verde."
+          },
+          {
+            "id": "p3",
+            "item": "Servilletas usadas y papel higiénico",
+            "opciones": [
+              "Caneca Blanca (Aprovechables)",
+              "Caneca Verde (Orgánicos)",
+              "Caneca Negra (No aprovechables)"
+            ],
+            "correcta": 2,
+            "explicacion": "Los papeles higiénicos y servilletas usadas no se reciclan, van en la negra."
+          },
+          {
+            "id": "p4",
+            "item": "Caja de cartón limpia y seca",
+            "opciones": [
+              "Caneca Blanca (Aprovechables)",
+              "Caneca Verde (Orgánicos)",
+              "Caneca Negra (No aprovechables)"
+            ],
+            "correcta": 0,
+            "explicacion": "El cartón limpio es aprovechable y va en la caneca blanca."
+          }
+        ]
+      }
+    ]
+  },
+  "$schema": "./node_modules/json-server/schema.json"
+}
